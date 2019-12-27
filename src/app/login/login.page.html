@@ -1,0 +1,47 @@
+<ion-content>
+  <div class="sign_in_page_wrap">
+    <div class="login_content">
+      <h1 class="ion-text-center">
+        <img src="assets/img/insta-logo.png" />
+      </h1>
+
+      <ion-input
+        [(ngModel)]="username"
+        placeholder="Phone number, email or username"
+      ></ion-input>
+
+      <ion-input
+        [(ngModel)]="password"
+        type="password"
+        placeholder="Password"
+      ></ion-input>
+
+      <ion-button
+        [disabled]="!username || !password"
+        expand="block"
+        color="primary"
+        >Log In</ion-button
+      >
+      <p>Forgot your login details?<a href="#"> Get help signing in</a></p>
+
+      <ion-button expand="block" color="primary">
+        <ion-icon slot="start" name="logo-facebook"></ion-icon>
+        Log In with facebook</ion-button
+      >
+
+      <h5>
+        OR
+      </h5>
+
+      <p>
+        Don't have an account?
+        <a [routerLink]="['/register']"> Sign up.</a>
+      </p>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="footer">
+    <p class="ion-text-center">Instagram from Facebook</p>
+  </ion-toolbar>
+</ion-footer>

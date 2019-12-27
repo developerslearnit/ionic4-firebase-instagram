@@ -1,0 +1,47 @@
+<ion-content>
+  <div class="sign_up_page_wrap">
+    <div class="signup_content">
+      <h1>
+        <ion-icon name="contact"></ion-icon>
+      </h1>
+
+      <header>
+        <div class="material-tabs">
+          <a
+            id="tab1-tab"
+            (click)="switchTab('phone')"
+            [class.active]='signUpOption=="phone"'
+            >PHONE</a
+          >
+          <a
+            id="tab2-tab"
+            (click)="switchTab('email')"
+            [class.active]='signUpOption=="email"'
+            >EMAIL</a
+          >
+          <span class="yellow-bar"></span>
+        </div>
+      </header>
+      <div class="tab-content">
+        <div *ngIf='signUpOption=="phone"' id="phoneTab">
+          <ion-input placeholder="Phone number" type="text"> </ion-input>
+        </div>
+        <div *ngIf='signUpOption=="email"' id="emailTab">
+          <ion-input placeholder="Email" [(ngModel)]="email" type="email">
+          </ion-input>
+        </div>
+      </div>
+      <div class="button_wrap">
+        <ion-button expand="block" color="primary">Next</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer">
+    <p class="ion-text-center">
+      Already have an account? <a [routerLink]="['/login']">Log in</a>
+    </p>
+  </ion-toolbar>
+</ion-footer>
